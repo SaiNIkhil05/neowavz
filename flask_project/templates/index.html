@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Local AI Assistant</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div class="container">
+
+    <h1>Local AI Assistant</h1>
+
+    <form method="POST">
+        <label><strong>Select Role:</strong></label><br>
+        <select name="role">
+            <option value="teacher">Teacher</option>
+            <option value="coder">Coder</option>
+            <option value="explainer">Explainer</option>
+        </select><br><br>
+
+        <textarea name="prompt" rows="6" placeholder="Type your question here...">{{ user_prompt }}</textarea><br>
+        <button type="submit">Ask AI</button>
+    </form>
+
+    <form method="POST" action="/clear">
+        <button type="submit">Clear History</button>
+    </form>
+
+    {% if ai_response %}
+        <div class="response">
+            <h3>AI Response</h3>
+            <p>{{ ai_response }}</p>
+            {% if pdf_path %}
+                <a href="{{ pdf_path }}" download>Download as PDF</a>
+            {% endif %}
+        </div>
+    {% endif %}
+
+    {% if history %}
+        <hr>
+        <h3>Prompt History</h3>
+        {% for role, prompt, response in history %}
+            <div class="history-item">
+                <strong>Role:</strong> {{ role | upper }}<br>
+                <strong>Prompt:</strong>
+                <p>{{ prompt }}</p>
+                <strong>Response:</strong>
+                <p>{{ response }}</p>
+            </div>
+        {% endfor %}
+    {% endif %}
+
+</div>
+</body>
+</html>

@@ -1,0 +1,133 @@
+/* ===== Global ===== */
+body {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+/* ===== Main Card ===== */
+.container {
+    max-width: 900px;
+    margin: 40px auto;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 14px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* ===== Headings ===== */
+h1 {
+    text-align: center;
+    color: #3b3b98;
+    margin-bottom: 25px;
+}
+
+h3 {
+    color: #2c2c54;
+}
+
+/* ===== Form Elements ===== */
+label {
+    color: #2f3640;
+    font-weight: 600;
+}
+
+select {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+textarea {
+    width: 100%;
+    padding: 14px;
+    font-size: 15px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    resize: vertical;
+    margin-top: 8px;
+    outline: none;
+}
+
+textarea:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.2);
+}
+
+/* ===== Buttons ===== */
+button {
+    background: linear-gradient(135deg, #667eea, #5a67d8);
+    color: white;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 12px;
+    transition: all 0.2s ease;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #5a67d8, #4c51bf);
+    transform: translateY(-1px);
+}
+
+/* Clear button slightly different */
+form[action="/clear"] button {
+    background: #e84118;
+}
+
+form[action="/clear"] button:hover {
+    background: #c23616;
+}
+
+/* ===== AI Response Box ===== */
+.response {
+    background: #f1f5ff;
+    border-left: 5px solid #667eea;
+    padding: 18px;
+    border-radius: 10px;
+    margin-top: 25px;
+}
+
+.response p {
+    white-space: pre-wrap;
+    line-height: 1.6;
+}
+
+/* ===== PDF Link ===== */
+.response a {
+    display: inline-block;
+    margin-top: 10px;
+    text-decoration: none;
+    color: #667eea;
+    font-weight: 600;
+}
+
+.response a:hover {
+    text-decoration: underline;
+}
+
+/* ===== History ===== */
+.history-item {
+    background: #fafafa;
+    border-left: 5px solid #44bd32;
+    padding: 14px;
+    border-radius: 8px;
+    margin-bottom: 14px;
+}
+
+.history-item strong {
+    color: #2f3640;
+}
+
+/* ===== Divider ===== */
+hr {
+    border: none;
+    height: 1px;
+    background: #ddd;
+    margin: 30px 0;
+}
